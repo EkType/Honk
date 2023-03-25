@@ -5,3 +5,5 @@
 # Names should be added to this file as:
 # Name or Organization <email address>
 
+Ek Type <www.ektype.in>
+Ek Type <contact@ektype.in>

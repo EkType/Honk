@@ -8,3 +8,8 @@
 #
 # Names should be added to this file as:
 # Name <email address>
+
+N: Ek Type 
+E: info@ektype.in 
+W: http://ektype.in 
+D: A collective of type designers focused on designing contemporary Indian typefaces. 
