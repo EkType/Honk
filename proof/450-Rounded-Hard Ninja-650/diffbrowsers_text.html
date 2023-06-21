@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+<head>
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>GFR - Text</title>
+    
+    <style type="text/css">
+    
+        html{
+	  font-family: sans-serif;
+	}
+	.box-title{
+	  width: 100%;
+	  font-size: 8pt;
+	  font-weight: 700;
+	  border-top: 1px solid black;
+	  padding-top: 5px;
+	  margin-bottom: 10pt;
+	  display: block;
+	}
+	.box{
+	  margin-bottom: 20pt;
+	  width: 100%;
+	  float: left;
+	}
+	.box-text{
+	}
+	
+	#nav{
+	  position: fixed;
+	  right: 20px;
+	  z-index: 100;
+	}
+	#font-toggle{
+	}
+	.nav-item{
+		display: block;
+		cursor: pointer;
+		-webkit-user-select: none; /* Safari */        
+		-moz-user-select: none; /* Firefox */
+			-ms-user-select: none; /* IE10+/Edge */
+		user-select: none; /* Standard */
+		text-align: center;
+		color: white;
+		background-color: black;
+		display: block;
+		font-size: 9pt;
+		padding: 5px;
+		margin: 2px;
+	}
+	.tooltip {
+	position: relative;
+	display: inline-block;
+	border-bottom: 1px dotted black;
+	}
+
+	.tooltip .tooltiptext {
+	font-family: sans-serif;
+	visibility: hidden;
+	width: 500px;
+	background-color: black;
+	color: #fff;
+	text-align: left;
+	font-size: 12pt;
+	line-height: 15pt;
+	border-radius: 6px;
+	padding: 5px 0;
+
+	/* Position the tooltip */
+	position: absolute;
+	z-index: 1;
+	}
+
+	.tooltip:hover .tooltiptext {
+	padding: 10px;
+	visibility: visible;
+	}
+	.tooltipleft {
+		float:left;
+		width: 249px;
+	}
+	.tooltipright {
+		float:right;
+		width:250px;
+	}
+
+			/* Stuff needed for the table differ */
+            body {
+                font-family: Helvetica;
+            }
+            .node {
+                font-family: courier;
+                cursor: pointer;
+                position: relative;
+                left: 30px;
+                padding: 5px;
+                display: block;
+                border: 1px dashed grey;
+            }
+            .header {
+            font-weight: bold;
+            }
+            .attrib-old{
+                color: red;
+                cursor: text;
+            }
+            .attrib-new{
+                color: green;
+                cursor: text;
+            }
+            .leaf {
+            font-weight: bold;
+            }
+            .old .cell .new {
+            	display:  none;
+            }
+            .new .cell .old {
+            	display:  none;
+            }
+            .both .cell .old {
+            	opacity: 0.75;
+            	color:  red;
+            }
+            .both .cell .new {
+            	opacity: 0.75;
+            	position: absolute;
+            	top: 0;
+            	color:  green;
+            }
+			.spacer {
+				display:block;
+				float:left;
+				width:100%;
+			}
+
+	  
+
+	  
+
+	  
+	    @font-face{
+    src: url(HonkWIP-450.ttf);
+    font-family: "Honk WIP";
+    font-weight: 450;
+    
+    font-style: normal;
+}
+	  
+	    @font-face{
+    src: url(HonkWIP-Rounded.ttf);
+    font-family: "Honk WIP";
+    font-weight: 600;
+    
+    font-style: normal;
+}
+	  
+	    @font-face{
+    src: url(HonkWIP-HardNinja.ttf);
+    font-family: "Honk WIP";
+    font-weight: 200;
+    
+    font-style: normal;
+}
+	  
+	    @font-face{
+    src: url(HonkWIP-650.ttf);
+    font-family: "Honk WIP";
+    font-weight: 650;
+    
+    font-style: normal;
+}
+	  
+	    @font-face{
+    src: url(HonkWIP-Contrast.ttf);
+    font-family: "Honk WIP";
+    font-weight: 300;
+    
+    font-style: normal;
+}
+	  
+	    @font-face{
+    src: url(HonkWIP-350.ttf);
+    font-family: "Honk WIP";
+    font-weight: 350;
+    
+    font-style: normal;
+}
+	  
+	    @font-face{
+    src: url(HonkWIP-Straight.ttf);
+    font-family: "Honk WIP";
+    font-weight: 400;
+    
+    font-style: normal;
+}
+	  
+	    @font-face{
+    src: url(HonkWIP-Condensed.ttf);
+    font-family: "Honk WIP";
+    font-weight: 500;
+    
+    font-style: normal;
+}
+	  
+	    @font-face{
+    src: url(HonkWIP-850.ttf);
+    font-family: "Honk WIP";
+    font-weight: 850;
+    
+    font-style: normal;
+}
+	  
+	    @font-face{
+    src: url(HonkWIP-Flower.ttf);
+    font-family: "Honk WIP";
+    font-weight: 1000;
+    
+    font-style: normal;
+}
+	  
+	    @font-face{
+    src: url(HonkWIP-SoftNinja.ttf);
+    font-family: "Honk WIP";
+    font-weight: 700;
+    
+    font-style: normal;
+}
+	  
+	    @font-face{
+    src: url(HonkWIP-550.ttf);
+    font-family: "Honk WIP";
+    font-weight: 550;
+    
+    font-style: normal;
+}
+	  
+	    @font-face{
+    src: url(HonkWIP-Plump.ttf);
+    font-family: "Honk WIP";
+    font-weight: 800;
+    
+    font-style: normal;
+}
+	  
+	    @font-face{
+    src: url(HonkWIP-Brush.ttf);
+    font-family: "Honk WIP";
+    font-weight: 100;
+    
+    font-style: normal;
+}
+	  
+	    @font-face{
+    src: url(HonkWIP-SemiFlower.ttf);
+    font-family: "Honk WIP";
+    font-weight: 900;
+    
+    font-style: normal;
+}
+	  
+	    @font-face{
+    src: url(HonkWIP-950.ttf);
+    font-family: "Honk WIP";
+    font-weight: 950;
+    
+    font-style: normal;
+}
+	  
+	    @font-face{
+    src: url(HonkWIP-750.ttf);
+    font-family: "Honk WIP";
+    font-weight: 750;
+    
+    font-style: normal;
+}
+	  
+	    @font-face{
+    src: url(HonkWIP-250.ttf);
+    font-family: "Honk WIP";
+    font-weight: 250;
+    
+    font-style: normal;
+}
+	  
+	    @font-face{
+    src: url(HonkWIP-150.ttf);
+    font-family: "Honk WIP";
+    font-weight: 150;
+    
+    font-style: normal;
+}
+	  
+
+	  
+
+	  
+
+	  
+	    .450{
+    font-family: "Honk WIP";
+    font-weight: 450;
+    font-stretch: 100%;
+    font-style: normal;
+}
+	  
+	    .Rounded{
+    font-family: "Honk WIP";
+    font-weight: 600;
+    font-stretch: 100%;
+    font-style: normal;
+}
+	  
+	    .Hard-Ninja{
+    font-family: "Honk WIP";
+    font-weight: 200;
+    font-stretch: 100%;
+    font-style: normal;
+}
+	  
+	    .650{
+    font-family: "Honk WIP";
+    font-weight: 650;
+    font-stretch: 100%;
+    font-style: normal;
+}
+	  
+	    .Contrast{
+    font-family: "Honk WIP";
+    font-weight: 300;
+    font-stretch: 100%;
+    font-style: normal;
+}
+	  
+	    .350{
+    font-family: "Honk WIP";
+    font-weight: 350;
+    font-stretch: 100%;
+    font-style: normal;
+}
+	  
+	    .Straight{
+    font-family: "Honk WIP";
+    font-weight: 400;
+    font-stretch: 100%;
+    font-style: normal;
+}
+	  
+	    .Condensed{
+    font-family: "Honk WIP";
+    font-weight: 500;
+    font-stretch: 100%;
+    font-style: normal;
+}
+	  
+	    .850{
+    font-family: "Honk WIP";
+    font-weight: 850;
+    font-stretch: 100%;
+    font-style: normal;
+}
+	  
+	    .Flower{
+    font-family: "Honk WIP";
+    font-weight: 1000;
+    font-stretch: 100%;
+    font-style: normal;
+}
+	  
+	    .Soft-Ninja{
+    font-family: "Honk WIP";
+    font-weight: 700;
+    font-stretch: 100%;
+    font-style: normal;
+}
+	  
+	    .550{
+    font-family: "Honk WIP";
+    font-weight: 550;
+    font-stretch: 100%;
+    font-style: normal;
+}
+	  
+	    .Plump{
+    font-family: "Honk WIP";
+    font-weight: 800;
+    font-stretch: 100%;
+    font-style: normal;
+}
+	  
+	    .Brush{
+    font-family: "Honk WIP";
+    font-weight: 100;
+    font-stretch: 100%;
+    font-style: normal;
+}
+	  
+	    .SemiFlower{
+    font-family: "Honk WIP";
+    font-weight: 900;
+    font-stretch: 100%;
+    font-style: normal;
+}
+	  
+	    .950{
+    font-family: "Honk WIP";
+    font-weight: 950;
+    font-stretch: 100%;
+    font-style: normal;
+}
+	  
+	    .750{
+    font-family: "Honk WIP";
+    font-weight: 750;
+    font-stretch: 100%;
+    font-style: normal;
+}
+	  
+	    .250{
+    font-family: "Honk WIP";
+    font-weight: 250;
+    font-stretch: 100%;
+    font-style: normal;
+}
+	  
+	    .150{
+    font-family: "Honk WIP";
+    font-weight: 150;
+    font-stretch: 100%;
+    font-style: normal;
+}
+	  
+	
+    </style>
+</head>
+<body>
+    <div id="nav">
+		
+		
+	</div>
+    <div id="content">
+	<h2>
+<b>Text</b>
+</h2>
+	
+  
+    <div class="box">
+      <div class="box-title">450 20pt</div>
+	<div class="box-text 450" dir="auto" style="font-size: 20pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan'ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora huatiromanmun?Ascantanrifin senenhas"honra IQUl, pu]ustinrin, Xiskuamana, — ye.[Missing]Ned – E'~mbi “raica qali.”Ni ai.3-'E 360 ruku/supu ADI‘Bakan nai>>ctaxa tjuta!Tjinguru 5IGELE ese_ejja tia;\ui. le^ i%anique « » = enupa,…) pruckamakir+t |</div>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">Rounded 20pt</div>
+	<div class="box-text Rounded" dir="auto" style="font-size: 20pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan'ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora huatiromanmun?Ascantanrifin senenhas"honra IQUl, pu]ustinrin, Xiskuamana, — ye.[Missing]Ned – E'~mbi “raica qali.”Ni ai.3-'E 360 ruku/supu ADI‘Bakan nai>>ctaxa tjuta!Tjinguru 5IGELE ese_ejja tia;\ui. le^ i%anique « » = enupa,…) pruckamakir+t |</div>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">Hard-Ninja 20pt</div>
+	<div class="box-text Hard-Ninja" dir="auto" style="font-size: 20pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan'ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora huatiromanmun?Ascantanrifin senenhas"honra IQUl, pu]ustinrin, Xiskuamana, — ye.[Missing]Ned – E'~mbi “raica qali.”Ni ai.3-'E 360 ruku/supu ADI‘Bakan nai>>ctaxa tjuta!Tjinguru 5IGELE ese_ejja tia;\ui. le^ i%anique « » = enupa,…) pruckamakir+t |</div>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">650 20pt</div>
+	<div class="box-text 650" dir="auto" style="font-size: 20pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan'ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora huatiromanmun?Ascantanrifin senenhas"honra IQUl, pu]ustinrin, Xiskuamana, — ye.[Missing]Ned – E'~mbi “raica qali.”Ni ai.3-'E 360 ruku/supu ADI‘Bakan nai>>ctaxa tjuta!Tjinguru 5IGELE ese_ejja tia;\ui. le^ i%anique « » = enupa,…) pruckamakir+t |</div>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">Contrast 20pt</div>
+	<div class="box-text Contrast" dir="auto" style="font-size: 20pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan'ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora huatiromanmun?Ascantanrifin senenhas"honra IQUl, pu]ustinrin, Xiskuamana, — ye.[Missing]Ned – E'~mbi “raica qali.”Ni ai.3-'E 360 ruku/supu ADI‘Bakan nai>>ctaxa tjuta!Tjinguru 5IGELE ese_ejja tia;\ui. le^ i%anique « » = enupa,…) pruckamakir+t |</div>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">350 20pt</div>
+	<div class="box-text 350" dir="auto" style="font-size: 20pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan'ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora huatiromanmun?Ascantanrifin senenhas"honra IQUl, pu]ustinrin, Xiskuamana, — ye.[Missing]Ned – E'~mbi “raica qali.”Ni ai.3-'E 360 ruku/supu ADI‘Bakan nai>>ctaxa tjuta!Tjinguru 5IGELE ese_ejja tia;\ui. le^ i%anique « » = enupa,…) pruckamakir+t |</div>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">Straight 20pt</div>
+	<div class="box-text Straight" dir="auto" style="font-size: 20pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan'ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora huatiromanmun?Ascantanrifin senenhas"honra IQUl, pu]ustinrin, Xiskuamana, — ye.[Missing]Ned – E'~mbi “raica qali.”Ni ai.3-'E 360 ruku/supu ADI‘Bakan nai>>ctaxa tjuta!Tjinguru 5IGELE ese_ejja tia;\ui. le^ i%anique « » = enupa,…) pruckamakir+t |</div>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">Condensed 20pt</div>
+	<div class="box-text Condensed" dir="auto" style="font-size: 20pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan'ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora huatiromanmun?Ascantanrifin senenhas"honra IQUl, pu]ustinrin, Xiskuamana, — ye.[Missing]Ned – E'~mbi “raica qali.”Ni ai.3-'E 360 ruku/supu ADI‘Bakan nai>>ctaxa tjuta!Tjinguru 5IGELE ese_ejja tia;\ui. le^ i%anique « » = enupa,…) pruckamakir+t |</div>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">850 20pt</div>
+	<div class="box-text 850" dir="auto" style="font-size: 20pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan'ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora huatiromanmun?Ascantanrifin senenhas"honra IQUl, pu]ustinrin, Xiskuamana, — ye.[Missing]Ned – E'~mbi “raica qali.”Ni ai.3-'E 360 ruku/supu ADI‘Bakan nai>>ctaxa tjuta!Tjinguru 5IGELE ese_ejja tia;\ui. le^ i%anique « » = enupa,…) pruckamakir+t |</div>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">Flower 20pt</div>
+	<div class="box-text Flower" dir="auto" style="font-size: 20pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan'ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora huatiromanmun?Ascantanrifin senenhas"honra IQUl, pu]ustinrin, Xiskuamana, — ye.[Missing]Ned – E'~mbi “raica qali.”Ni ai.3-'E 360 ruku/supu ADI‘Bakan nai>>ctaxa tjuta!Tjinguru 5IGELE ese_ejja tia;\ui. le^ i%anique « » = enupa,…) pruckamakir+t |</div>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">Soft-Ninja 20pt</div>
+	<div class="box-text Soft-Ninja" dir="auto" style="font-size: 20pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan'ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora huatiromanmun?Ascantanrifin senenhas"honra IQUl, pu]ustinrin, Xiskuamana, — ye.[Missing]Ned – E'~mbi “raica qali.”Ni ai.3-'E 360 ruku/supu ADI‘Bakan nai>>ctaxa tjuta!Tjinguru 5IGELE ese_ejja tia;\ui. le^ i%anique « » = enupa,…) pruckamakir+t |</div>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">550 20pt</div>
+	<div class="box-text 550" dir="auto" style="font-size: 20pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan'ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora huatiromanmun?Ascantanrifin senenhas"honra IQUl, pu]ustinrin, Xiskuamana, — ye.[Missing]Ned – E'~mbi “raica qali.”Ni ai.3-'E 360 ruku/supu ADI‘Bakan nai>>ctaxa tjuta!Tjinguru 5IGELE ese_ejja tia;\ui. le^ i%anique « » = enupa,…) pruckamakir+t |</div>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">Plump 20pt</div>
+	<div class="box-text Plump" dir="auto" style="font-size: 20pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan'ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora huatiromanmun?Ascantanrifin senenhas"honra IQUl, pu]ustinrin, Xiskuamana, — ye.[Missing]Ned – E'~mbi “raica qali.”Ni ai.3-'E 360 ruku/supu ADI‘Bakan nai>>ctaxa tjuta!Tjinguru 5IGELE ese_ejja tia;\ui. le^ i%anique « » = enupa,…) pruckamakir+t |</div>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">Brush 20pt</div>
+	<div class="box-text Brush" dir="auto" style="font-size: 20pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan'ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora huatiromanmun?Ascantanrifin senenhas"honra IQUl, pu]ustinrin, Xiskuamana, — ye.[Missing]Ned – E'~mbi “raica qali.”Ni ai.3-'E 360 ruku/supu ADI‘Bakan nai>>ctaxa tjuta!Tjinguru 5IGELE ese_ejja tia;\ui. le^ i%anique « » = enupa,…) pruckamakir+t |</div>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">SemiFlower 20pt</div>
+	<div class="box-text SemiFlower" dir="auto" style="font-size: 20pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan'ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora huatiromanmun?Ascantanrifin senenhas"honra IQUl, pu]ustinrin, Xiskuamana, — ye.[Missing]Ned – E'~mbi “raica qali.”Ni ai.3-'E 360 ruku/supu ADI‘Bakan nai>>ctaxa tjuta!Tjinguru 5IGELE ese_ejja tia;\ui. le^ i%anique « » = enupa,…) pruckamakir+t |</div>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">950 20pt</div>
+	<div class="box-text 950" dir="auto" style="font-size: 20pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan'ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora huatiromanmun?Ascantanrifin senenhas"honra IQUl, pu]ustinrin, Xiskuamana, — ye.[Missing]Ned – E'~mbi “raica qali.”Ni ai.3-'E 360 ruku/supu ADI‘Bakan nai>>ctaxa tjuta!Tjinguru 5IGELE ese_ejja tia;\ui. le^ i%anique « » = enupa,…) pruckamakir+t |</div>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">750 20pt</div>
+	<div class="box-text 750" dir="auto" style="font-size: 20pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan'ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora huatiromanmun?Ascantanrifin senenhas"honra IQUl, pu]ustinrin, Xiskuamana, — ye.[Missing]Ned – E'~mbi “raica qali.”Ni ai.3-'E 360 ruku/supu ADI‘Bakan nai>>ctaxa tjuta!Tjinguru 5IGELE ese_ejja tia;\ui. le^ i%anique « » = enupa,…) pruckamakir+t |</div>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">250 20pt</div>
+	<div class="box-text 250" dir="auto" style="font-size: 20pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan'ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora huatiromanmun?Ascantanrifin senenhas"honra IQUl, pu]ustinrin, Xiskuamana, — ye.[Missing]Ned – E'~mbi “raica qali.”Ni ai.3-'E 360 ruku/supu ADI‘Bakan nai>>ctaxa tjuta!Tjinguru 5IGELE ese_ejja tia;\ui. le^ i%anique « » = enupa,…) pruckamakir+t |</div>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">150 20pt</div>
+	<div class="box-text 150" dir="auto" style="font-size: 20pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan'ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora huatiromanmun?Ascantanrifin senenhas"honra IQUl, pu]ustinrin, Xiskuamana, — ye.[Missing]Ned – E'~mbi “raica qali.”Ni ai.3-'E 360 ruku/supu ADI‘Bakan nai>>ctaxa tjuta!Tjinguru 5IGELE ese_ejja tia;\ui. le^ i%anique « » = enupa,…) pruckamakir+t |</div>
+    </div>
+  
+
+    </div>
+</body>
+	<script>
+
+	POSITION = "old"
+	fontToggle = document.getElementById("font-toggle")
+	function switchFonts() {
+	boxTitles = document.getElementsByClassName("box-title")
+	items = document.getElementsByClassName("box-text");
+	  
+	if (POSITION === "old") {
+	  POSITION = "new"
+	  for (item of boxTitles) {
+	    item.textContent = item.textContent.replace("old", "new")
+	    fontToggle.textContent = "new"
+	  }
+	  for (item of items) {
+		item.className = item.className.replace("old", "new")
+	  }
+
+	  } else {
+	  POSITION = "old"
+	  for (item of boxTitles) {
+	    item.textContent = item.textContent.replace("new", "old")
+	    fontToggle.textContent = "old"
+	  }
+	  for (item of items) {
+		item.className = item.className.replace("new", "old")
+	  }
+	}
+	}
+	if (fontToggle !== null) {
+		fontToggle.addEventListener("click", switchFonts);
+	}
+
+    const divs = document.querySelectorAll('.node');
+    divs.forEach(el => el.addEventListener('click', event => {
+    var children = event.target.querySelectorAll(".node");
+    children.forEach(function(e) {
+        if (e.style.display === "none") {
+            e.style.display = "block";
+        } else {
+            e.style.display = "none";
+        }
+    })
+    }));
+    
+	// break text so that no reflow happens
+async function breakText() {
+	boxContent = document.getElementsByClassName("box-text")
+	for (let box of boxContent) {
+		switchFonts()
+		await sleep(1)
+		break1 = getLineBreaks(box)
+		switchFonts()
+		await sleep(1)
+		break2 = getLineBreaks(box)
+
+		if (break1.length >= break2.length) {
+		breaks = break1
+		} else {
+		breaks = break2
+		}
+		insertBreaks(box, breaks)
+		box.style.whiteSpace = "pre"
+		console.log("set to pre")
+	}
+	}
+
+function getLineBreaks(elem) {
+	const nodes = grabTextNodes(elem);
+	for (const node of nodes) { // each node is a big block of text
+		let rangeIndex = 1;
+		let textIndex = 0;
+		let nodeText = node.textContent;
+		const textLength = nodeText.length;
+
+		linebreaks = []
+		prevTop = 0;
+		while (rangeIndex <= textLength) {
+			const range = document.createRange();
+			range.setStart(node, rangeIndex-1);
+			range.setEnd(node, rangeIndex)
+			currentTop = range.getBoundingClientRect().top
+		if (currentTop > prevTop) {
+			linebreaks.push(rangeIndex-2)
+		}
+		rangeIndex += 1;
+		prevTop = currentTop
+		}
+	}
+	return linebreaks
+}
+
+function grabTextNodes(elem) {
+	const walker = document.createTreeWalker(elem, NodeFilter.SHOW_TEXT, null);
+	const nodes = [];
+	while (walker.nextNode()) {
+		nodes.push(walker.currentNode);
+	}
+	return nodes;
+}
+
+	function sleep(ms) {
+		return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+
+function insertBreaks(node, breaks) {
+	console.log(node, breaks)
+	newText = ""
+	currentText = node.textContent
+	for (i=0; i<currentText.length; i++) {
+		if (breaks.includes(i)) {
+		newText += "<br>"
+		} else {
+		newText += currentText[i]
+		}
+	}
+	node.innerHTML = newText
+}
+
+	if (fontToggle !== null) {
+		breakText()
+}
+
+	
+
+
+    </script>
+</html>
