@@ -14,7 +14,7 @@
 
 A combination of Truck lettering, COLRv1, Variable and Modular fonts, Honk is a WIP typeface from Ek Type. 
 
-![](Honk!.mp4)
+![](/documentation/honk.gif)
 
 ## License
 
