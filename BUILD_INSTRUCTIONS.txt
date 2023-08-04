@@ -1,0 +1,10 @@
+BUILD INSTRUCTIONS
+1. Save the 'HonkScripts' folder to your GlyphsApp scripts folder
+2. Open 'HonkBaseFile.glyphs' on GlyphsApp
+3. From Scripts>HonkScripts, run the script 'Honk - Generate File For Export'
+4. Wait while this generates a new glyphs file 'HonkExportFile.glyphs'
+5. You can now use 'HonkExportFile.glyphs' to export your variable font, directly from GlyphsApp or using fontmake
+6. Copy the script 'add_gradient.py' to the same folder as your exported font
+7. In a Terminal window, navigate to the folder containing the font and the script
+8. Run the command 'python3 add_gradient.py Honk[STYL,SHDW].ttf' on your command line
+9. This will create a new font file with the gradient added

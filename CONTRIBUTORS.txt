@@ -12,4 +12,28 @@
 N: Ek Type 
 E: info@ektype.in 
 W: http://ektype.in 
-D: A collective of type designers focused on designing contemporary Indian typefaces. 
+D: A collaborative type design studio focused on designing contemporary Indian typefaces. 
+
+N: Noopur Datye
+E: noopur.datye@ektype.in 
+D: Type Design
+
+N: Yesha Goshar
+E: yeshagoshar@gmail.com
+D: Type Design
+
+N: Girish Dalvi 
+E: girish.dalvi@gmail.com 
+D: Font Engineering 
+
+N: Sidharth Jaishankar
+E: sdhrth.jshnkr@gmail.com 
+D: Font Engineering 
+
+N: Athul Jayaraman
+E: athuljrm@gmail.com
+D: Dingbats
+
+N: Taresh Vohra
+E: tareshvohra@gmail.com
+D: Testing

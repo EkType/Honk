@@ -1,0 +1,23 @@
+EDIT INSTRUCTIONS
+Use the 'HonkBaseFile.glyphs' to edit or add glyphs to this project.
+All the necessary glyphs in this project are made up of components that are pieced together.
+In the base file, the glyphs contain only their outline and shadow, but they also have corresponding background components that get added during the build process.
+
+To edit a glyph outline or shadow:
+1. Edit the components that the glyph is made of, as required. Make sure the masters remain compatible, and cross-check that the edits have the desired effect on all the glyphs that use the same component
+2. Now you can follow the build instructions to generate your font
+
+To add a different background to a glyph:
+1. Use the 'Honk - Add BG.py' script to add the corresponding backgrounds to all the current exporting glyphs
+2. Add the new background glyph you require to the file, use it as a component to replace the old bg in the glyph/s it needs to be in
+3. Use the script 'Honk - Generate BG Array.py'. This will print an array in the output section of the Macro Panel
+4. Copy this array into 'Honk - Generate File For Export.py' as the value of the variable 'bgs' in line 36 of the code. Do the same with the variable 'bgs' in the script 'Honk - Add BG.py' as well, so that it is updated for the next time changes need to be made
+5. Use the script 'Honk - Remove BG Components.py' to remove the backgrounds from the base file again
+6. Copy the updated script 'Honk - Generate File For Export.py' back into your GlyphsApp 'Scripts' folder
+7. Now you can follow the build instructions to generate your font
+
+To add new glyphs:
+1. Use the 'Add BG.py' script to add the corresponding backgrounds to all the current exporting glyphs
+2. Add any new glyphs, draw and assemble the outline in the same format as the rest of the file. Use existing components wherever possible, but you may make as many new components as you need. Just make sure to set them as non-exporting glyphs, and follow the naming conventions in the file
+3. Add shadow and background components to your glyph. Again, you can add new shadow or background glyphs as long as you follow the naming pattern and set them to non-exporting
+4. Now you can follow steps 3-7 under 'To add a different background to a glyph' for the rest of the process
