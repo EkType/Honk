@@ -43,13 +43,14 @@ assert colr0.version == 0, "COLR table version must be 0"
 
 cpal = font["CPAL"]
 assert cpal.palettes == [
-    [color("#000000FF"), color("#000000FF"), color("#FFFFFFFF"), color("#FFF33BFF"), color("#FDAA0CFF"), color("#F3705BFF"), color("#E9579EFF"), color("#FF45FFFF")], 
-    [color("#000040FF"), color("#605FA0FF"), color("#FFFFFFFF"), color("#FFFFFFFF"), color("#F6CBDBFF"), color("#F6CBDBFF"), color("#605FA0FF"), color("#605FA0FF")], 
-    [color("#000040FF"), color("#000000FF"), color("#EE1E2CFF"), color("#FF7F00FF"), color("#FFCA00FF"), color("#37DB52FF"), color("#00A7DDFF"), color("#AD60E0FF")], 
-    [color("#FFFFFFFF"), color("#FFFFFFFF"), color("#202C88FF"), color("#2B4AB5FF"), color("#1C75BCFF"), color("#279DE1FF"), color("#00A7C5FF"), color("#00A79DFF")], 
-    [color("#000000FF"), color("#000000FF"), color("#CCCCCCFF"), color("#CCCCCCFF"), color("#666666FF"), color("#333333FF"), color("#666666FF"), color("#CCCCCCFF")], 
-    [color("#000080FF"), color("#2B97E0FF"), color("#FF7733FF"), color("#FF7733FF"), color("#FFFFFFFF"), color("#FFFFFFFF"), color("#339966FF"), color("#339966FF")],
-    [color("#FFFFFFFF"), color("#FFFFFFFF"), color("#CCCCCC00"), color("#CCCCCC00"), color("#CCCCCC66"), color("#CCCCCC99"), color("#CCCCCCFF"), color("#CCCCCCFF")]
+    [color("#000000FF"), color("#000000FF"), color("#FFFFB2FF"), color("#FFFF78FF"), color("#FFC753FF"), color("#FF755FFF"), color("#FF3CAFFF"), color("#FF46AFFF")], 
+    [color("#000000FF"), color("#0000FFFF"), color("#B200FFFF"), color("#7823f5FF"), color("#0AB4FFFF"), color("#0DFCA2FF"), color("#B4FD52FF"), color("#FFFF00FF")], 
+    [color("#FFFF00FF"), color("#FFFF00FF"), color("#C8C8C8FF"), color("#000000FF"), color("#C8C8C8FF"), color("#000000FF"), color("#C8C8C8FF"), color("#000000FF")], 
+    [color("#00FF00FF"), color("#00FFFFFF"), color("#000000FF"), color("#000000FF"), color("#000000FF"), color("#000000FF"), color("#000000FF"), color("#000000FF")], 
+    [color("#010101FF"), color("#5C5B9CFF"), color("#FFFFFFFF"), color("#FFFFFFFF"), color("#FFCFF5FF"), color("#D9D2FFFF"), color("#A7B5EAFF"), color("#99B1E4FF")], 
+    [color("#000000FF"), color("#433F99FF"), color("#86528FFF"), color("#B17C9BFF"), color("#E6BCA7FF"), color("#F8E5B6FF"), color("#E0A15CFF"), color("#BD7640FF")],
+    [color("#000040FF"), color("#000000FF"), color("#EE1E2CFF"), color("#FF7F00FF"), color("#FFCA00FF"), color("#37DB52FF"), color("#00A7DDFF"), color("#AD60E0FF")],
+    [color("#000000FF"), color("#000000FF"), color("#FFFFFFFF"), color("#FFFFFFFF"), color("#FFFFFFFF"), color("#FFFFFFFF"), color("#FFFFFFFF"), color("#FFFFFFFF")]
 ], "Colour Palettes do not match, check the font"
 
 
