@@ -12,9 +12,17 @@
 [Shaping]: https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2FEkType%2FHonk%2Fgh-pages%2Fbadges%2FShapingChecks.json
 [Universal]: https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2FEkType%2FHonk%2Fgh-pages%2Fbadges%2FUniversal.json
 
-A combination of Truck lettering, COLRv1, Variable and Modular fonts, Honk is a WIP typeface from Ek Type. 
-
 ![](/documentation/honk.gif)
+
+Loud, bright, and exuberantly fun! Honk is a variable colour font from Ek Type. It is a riotous digital interpretation of the bold and boisterous lettering seen on Indian trucks.
+
+An extravaganza of form and colour, Honk is a modular system with ten distinct styles, shadows, and colour palettes. An embodiment of India's colourful complexity, it effortlessly oscillates between simple and subtle to over-the-top and ornate. It's the kind of font that doesn't just speak; it shouts, honks, and sings with its varied styles, dynamic shape-shifting and use of colorv1 technology.
+
+Honk reflects the essence of India's vibrant spirit, and it does so with an audacious flair. So, the next time you need a font that's as lively as an Indian street corner, give Honk a try. It is a typographic adventure you won't forget!
+
+Honk is designed by Noopur Datye and Yesha Goshar, and engineered by Sidharth Jaishankar and Girish Dalvi, emojis are designed by Athul Jayaraman and testing is done by Taresh Vohra and team Ek Type. A big honk to all the amazing designers who helped by open sourcing their color/element-based variable fonts.
+
+To contribute, see <a href="https://github.com/EkType/Honk/">github.com/EkType/Honk</a></p>
 
 ## License
 

@@ -96,7 +96,7 @@ colr = builder.buildCOLR(colrv1_map)
 
 font["COLR"] = colr
 
-out_file = "Honk[SHDW,STYL].ttf"
+out_file = "Honk[MORF,SHDW].ttf"
 font.save(out_file)
 
 print(f"Wrote {out_file}")
