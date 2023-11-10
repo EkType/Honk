@@ -1,5 +1,8 @@
 sources:
-  - Honk.glyphs
+  - HonkExportFile.glyphs
 axisOrder:
-  - wght
+  - MORF
+  - SHDW
 familyName: Honk
+buildVariable: true
+buildStatic: false
