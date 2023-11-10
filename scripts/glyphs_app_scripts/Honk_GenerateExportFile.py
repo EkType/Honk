@@ -477,7 +477,6 @@ addColorLayers(exporting)
 distribute(exporting)
 #make a copy of the glyphs file and saves it
 dst = os.path.join(os.path.dirname(font.filepath), "HonkExportFile.glyphs")
-font.save(dst)
 #duplicate masters to generate Shadow masters
 for master in font.masters:
 	masterCopy = master.copy()
@@ -520,3 +519,5 @@ while i < l:
 	else:
 		exports.remove(e)
 		l -= 1
+font.save(dst)
+print("done!")
