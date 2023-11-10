@@ -35,7 +35,7 @@ def buildSolid(colorIndex):
 
 assert len(sys.argv) == 2, "Filename is required"
 
-font = TTFont(sys.argv[1])
+font = TTFont(sys.argv[-1])
 
 colr0 = font["COLR"]
 assert colr0.version == 0, "COLR table version must be 0"
@@ -96,7 +96,5 @@ colr = builder.buildCOLR(colrv1_map)
 
 font["COLR"] = colr
 
-out_file = "Honk[MORF,SHDW].ttf"
-font.save(out_file)
-
-print(f"Wrote {out_file}")
+font.save(sys.argv[-1])
+print(f"Wrote {sys.argv[-1]}")
