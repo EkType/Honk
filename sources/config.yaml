@@ -2,7 +2,7 @@ sources:
   - HonkExportFile.glyphs
 axisOrder:
   - MORF
-  - SHDW
+  - SHLN
 familyName: Honk
 buildVariable: true
 buildStatic: false
@@ -12,8 +12,8 @@ stat:
     values:
     - name: Default
       value: 15
-  - name: Shadow
-    tag: SHDW
+  - name: Shadow Length
+    tag: SHLN
     values:
     - name: Default
       value: 0
