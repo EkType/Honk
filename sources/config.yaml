@@ -6,3 +6,14 @@ axisOrder:
 familyName: Honk
 buildVariable: true
 buildStatic: false
+stat:
+  - name: Morph
+    tag: MORF
+    values:
+    - name: Default
+      value: 15
+  - name: Shadow
+    tag: SHDW
+    values:
+    - name: Default
+      value: 0
