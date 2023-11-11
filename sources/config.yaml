@@ -1,5 +1,19 @@
 sources:
-  - Honk.glyphs
+  - HonkExportFile.glyphs
 axisOrder:
-  - wght
+  - MORF
+  - SHLN
 familyName: Honk
+buildVariable: true
+buildStatic: false
+stat:
+  - name: Morph
+    tag: MORF
+    values:
+    - name: Default
+      value: 15
+  - name: Shadow Length
+    tag: SHLN
+    values:
+    - name: Default
+      value: 0
