@@ -10,10 +10,30 @@ stat:
   - name: Morph
     tag: MORF
     values:
-    - name: Default
+    - name: Brush
+      value: 0
+    - name: Ninja
+      value: 5
+    - name: Irregular
+      value: 10
+    - name: Regular
       value: 15
+      flags: 2
+    - name: Compressed
+      value: 20
+    - name: Rounded
+      value: 25
+    - name: Softie
+      value: 30
+    - name: Balloon
+      value: 35
+    - name: Wood
+      value: 40
+    - name: Flower
+      value: 45
   - name: Shadow Length
     tag: SHLN
     values:
     - name: Default
       value: 0
+      flags: 2

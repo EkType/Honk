@@ -514,7 +514,8 @@ i = 0
 l = len(exports)
 while i < l:
 	e = exports[i]
-	if e.name=='Regular':
+	# Allow certain morf instances (5, 10, 15, ...)
+	if e.axes[0] % 5 == 0 and e.axes[1] == 0:
 		i += 1
 	else:
 		exports.remove(e)
