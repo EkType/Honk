@@ -18,6 +18,7 @@ stat:
       value: 10
     - name: Regular
       value: 15
+      flags: 2
     - name: Compressed
       value: 20
     - name: Rounded
@@ -35,3 +36,4 @@ stat:
     values:
     - name: Default
       value: 0
+      flags: 2
