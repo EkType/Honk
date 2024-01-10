@@ -35,7 +35,7 @@ fontbakery==0.8.11
 fontFeatures==1.7.4
 fontmake==3.5.1
 fontMath==0.9.3
-fonttools==4.39.2
+fonttools==4.43.0
 freetype-py==2.3.0
 fs==2.4.16
 gflanguages==0.4.6
