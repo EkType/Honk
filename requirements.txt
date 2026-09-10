@@ -89,7 +89,7 @@ resvg-cli==0.22.0.post3
 rich==13.3.2
 rstr==3.2.0
 selenium==4.8.3
-sh==2.0.3
+sh==2.2.4
 six==1.16.0
 skia-pathops==0.7.4
 skia-python==144.0.post1
