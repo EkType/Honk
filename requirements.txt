@@ -96,7 +96,7 @@ skia-python==144.0.post1
 smmap==5.0.0
 sniffio==1.3.0
 sortedcontainers==2.4.0
-soupsieve==2.4
+soupsieve==2.8.4
 sre-yield==1.2
 statmake==0.6.0
 strictyaml==1.7.3
